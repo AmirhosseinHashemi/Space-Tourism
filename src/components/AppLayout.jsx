@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import {Outlet} from "react-router-dom";
 
+import Container from "./Container";
 import Main from "./Main";
 import Header from "./Header";
 import HamburgerMenu from "./HamburgerMenu";
 import Logo from "./Logo";
-import Container from "./Container";
 
 const StyledAppLayout = styled.div`
   min-height: 100dvh;
@@ -19,7 +20,7 @@ const Div = styled.div`
   justify-content: space-between;
 `;
 
-function AppLayout({children}) {
+function AppLayout() {
   return (
     <StyledAppLayout>
       <Header>
@@ -31,7 +32,7 @@ function AppLayout({children}) {
         </Container>
       </Header>
       <Main>
-        <Container>{children}</Container>
+        <Container>{<Outlet />}</Container>
       </Main>
     </StyledAppLayout>
   );
