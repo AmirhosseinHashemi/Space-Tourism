@@ -46,6 +46,21 @@ const GlobalStyle = createGlobalStyle`
         list-style: none;
     }
 
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    
+    button:focus-visible {
+        outline: 0.1rem solid var(--clr-white);
+        outline-offset: 0.5rem;
+    }
+
+    img {
+        width: 100%;
+    }
+
     a:link,
     a:visited {
         text-decoration: none;
