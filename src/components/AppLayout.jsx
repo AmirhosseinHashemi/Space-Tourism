@@ -1,11 +1,9 @@
 import styled from "styled-components";
 import {Outlet} from "react-router-dom";
 
+import Header from "./Header";
 import Container from "./Container";
 import Main from "./Main";
-import Header from "./Header";
-import HamburgerMenu from "./HamburgerMenu";
-import Logo from "./Logo";
 
 const StyledAppLayout = styled.div`
   min-height: 100dvh;
@@ -14,23 +12,10 @@ const StyledAppLayout = styled.div`
   background-image: url(images/home/background-home-mobile.jpg);
 `;
 
-const Div = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
 function AppLayout() {
   return (
     <StyledAppLayout>
-      <Header>
-        <Container>
-          <Div>
-            <Logo />
-            <HamburgerMenu />
-          </Div>
-        </Container>
-      </Header>
+      <Header />
       <Main>
         <Container>{<Outlet />}</Container>
       </Main>
