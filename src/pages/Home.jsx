@@ -6,6 +6,8 @@ const StyledHome = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 8.1rem;
+
+  padding-block: 2.4rem 4.8rem;
 `;
 
 const Content = styled.article`

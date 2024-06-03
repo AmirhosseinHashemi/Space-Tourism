@@ -4,7 +4,7 @@ import styled from "styled-components";
 import TravelStep from "../components/TravelStep";
 
 const StyledSection = styled.section`
-  margin-top: -2.4rem;
+  padding-bottom: 5.8rem;
 `;
 
 const PlanetImg = styled.img`
