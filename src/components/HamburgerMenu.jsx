@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StyledHamburgerMenu = styled.button`
   width: 2.4rem;
   height: 2.1rem;
-  z-index: 1;
+  z-index: 11;
 `;
 
 function HamburgerMenu({isNavOpen, toggleNav}) {

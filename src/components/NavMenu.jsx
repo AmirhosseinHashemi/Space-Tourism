@@ -11,6 +11,7 @@ const StyledNavMenu = styled.nav`
   background-color: rgba(255, 255, 255, 4%);
   backdrop-filter: blur(81.5px);
   padding: 11.8rem 0 0 3.2rem;
+  z-index: 10;
 
   display: none;
 `;

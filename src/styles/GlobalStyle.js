@@ -40,6 +40,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: var(--ff-barlow);
+        overflow-x: hidden;
     }
 
     ul {
