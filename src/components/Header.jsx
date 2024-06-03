@@ -1,10 +1,14 @@
+import {useState} from "react";
 import styled from "styled-components";
 
 import Container from "./Container";
+import NavMenu from "./NavMenu";
 import HamburgerMenu from "./HamburgerMenu";
 import Logo from "./Logo";
 
-const StyledHeader = styled.header``;
+const StyledHeader = styled.header`
+  position: relative;
+`;
 
 const Div = styled.div`
   display: flex;
@@ -13,12 +17,18 @@ const Div = styled.div`
 `;
 
 function Header() {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const toggleNav = () => {
+    setIsNavOpen((currentState) => !currentState);
+  };
+
   return (
     <StyledHeader>
       <Container>
         <Div>
           <Logo />
-          <HamburgerMenu />
+          <HamburgerMenu isNavOpen={isNavOpen} toggleNav={toggleNav} />
+          <NavMenu isNavOpen={isNavOpen} />
         </Div>
       </Container>
     </StyledHeader>

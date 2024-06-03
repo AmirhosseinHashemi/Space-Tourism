@@ -52,7 +52,9 @@ const GlobalStyle = createGlobalStyle`
         cursor: pointer;
     }
     
-    button:focus-visible {
+    button:focus-visible,
+    a:link:focus-visible,
+    a:visited:focus-visible {
         outline: 0.1rem solid var(--clr-white);
         outline-offset: 0.5rem;
     }
@@ -63,11 +65,12 @@ const GlobalStyle = createGlobalStyle`
 
     a:link,
     a:visited {
+        color: inherit;
         text-decoration: none;
     }
 
     nav {
-        font-family: var(--ff-barlow);
+        font-family: var(--ff-barlow-condensed);
         font-size: var(--fs-sm);
         font-weight: 400;
         letter-spacing: var(--letter-spacing-md);
@@ -81,6 +84,23 @@ const GlobalStyle = createGlobalStyle`
     h6 {
         font-family: var(--ff-bellefair);
         font-weight: 400;
+    }
+
+    /* open nav menu class */
+    .open {
+        display: block;
+        width: 25.4rem;
+        animation-name: openMenu;
+        animation-duration: 0.5s;
+    }
+
+    @keyframes openMenu {
+        from {
+            width: 0;
+        }
+        to {
+            width: 25.4rem;
+        }
     }
 
 `;
