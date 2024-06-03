@@ -8,6 +8,7 @@ import Logo from "./Logo";
 
 const StyledHeader = styled.header`
   position: relative;
+  padding-block: 2.4rem;
 `;
 
 const Div = styled.div`
