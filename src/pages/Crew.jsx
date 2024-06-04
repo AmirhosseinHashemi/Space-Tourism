@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import {useCrew} from "../contexts/CrewContext";
+
+import {CREW_LENGTH} from "../utils/config";
 import TravelStep from "../components/TravelStep";
 import Line from "../components/Line";
 
@@ -63,7 +66,7 @@ const FullName = styled.h3`
   font-size: 2.4rem;
   letter-spacing: 0;
   color: var(--clr-white);
-  text-transform: uppercasem;
+  text-transform: uppercase;
 
   margin-bottom: 1.6rem;
 `;
@@ -76,6 +79,11 @@ const Description = styled.p`
 `;
 
 function Crew() {
+  const {
+    displayedCrew: {id, fullName, image, alt, job, description},
+    changeCrew,
+  } = useCrew();
+
   return (
     <StyledCrew>
       <TravelStep>
@@ -84,41 +92,27 @@ function Crew() {
 
       <CrewContent>
         <CrewImage>
-          <img
-            src="images/crew/image-douglas-hurley.webp"
-            alt="Image of your crew"
-          />
+          <img src={image} alt={alt} />
           <Line />
         </CrewImage>
 
         <CrewArticle>
           <CircleDot>
-            <button
-              to="?crewName=douglas-hurley"
-              className="dot active"
-              aria-label="a clickable, circle dot"
-            ></button>
-            <button
-              className="dot"
-              aria-label="a clickable, circle dot"
-            ></button>
-            <button
-              className="dot"
-              aria-label="a clickable, circle dot"
-            ></button>
-            <button
-              className="dot"
-              aria-label="a clickable, circle dot"
-            ></button>
+            {Array.from({length: CREW_LENGTH}, (_, index) => index).map(
+              (val) => (
+                <button
+                  key={val}
+                  onClick={() => changeCrew(val)}
+                  className={`dot ${id === val && "active"}`}
+                  aria-label="a clickable, circle dot"
+                ></button>
+              )
+            )}
           </CircleDot>
 
-          <JobTitle>COMMANDER</JobTitle>
-          <FullName>DOUGHLAS HURLEY</FullName>
-          <Description>
-            Douglas Gerald Hurley is an American engineer, former Marine Corps
-            pilot and former NASA astronaut. He launched into space for the
-            third time as commander of Crew Dragon Demo-2.
-          </Description>
+          <JobTitle>{job}</JobTitle>
+          <FullName>{fullName}</FullName>
+          <Description>{description}</Description>
         </CrewArticle>
       </CrewContent>
     </StyledCrew>
