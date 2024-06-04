@@ -23,13 +23,13 @@ const StyledAppLayout = styled.div`
     `}
 
     ${(prop) =>
-    prop["aria-details"] === "crew" &&
+    prop["data-page"] === "crew" &&
     css`
       background-image: url(images/crew/background-crew-mobile.jpg);
     `}
 
     ${(prop) =>
-    prop["aria-details"] === "technology" &&
+    prop["data-page"] === "technology" &&
     css`
       background-image: url(images/technology/background-technology-mobile.jpg);
     `}
