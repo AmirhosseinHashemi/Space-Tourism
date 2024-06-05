@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import useTerm from "../hooks/useTerm";
+import {TERMINOLOGIES} from "../utils/config";
+
 import TravelStep from "../components/TravelStep";
 
 const StyledTechnology = styled.section`
@@ -75,6 +78,11 @@ const Description = styled.p`
 `;
 
 function Technology() {
+  const {
+    displayedTerm: {word, description, id, image},
+    changeTerm,
+  } = useTerm();
+
   return (
     <StyledTechnology>
       <TravelStep>
@@ -83,26 +91,23 @@ function Technology() {
 
       <TechnologyContent>
         <TechImage>
-          <img
-            src="images/technology/image-launch-vehicle-landscape.jpg"
-            alt=""
-          />
+          <img src={image} alt="" />
         </TechImage>
         <TechStep>
-          <button className="active">1</button>
-          <button className="">2</button>
-          <button className="">3</button>
+          {TERMINOLOGIES.map((term) => (
+            <button
+              key={term.id}
+              onClick={() => changeTerm(term.id)}
+              className={`${id === term.id ? "active" : ""}`}
+            >
+              {term.id + 1}
+            </button>
+          ))}
         </TechStep>
         <Div>
           <Terminology>THE TERMONOLOGY ...</Terminology>
-          <Title>LAUNCH VEHICLE</Title>
-          <Description>
-            A launch vehicle or carrier rocket is a rocket-propelled vehicle
-            used to carry a payload from Earth's surface to space, usually to
-            Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful
-            in operation. Standing 150 metres tall, it's quite an awe-inspiring
-            sight on the launch pad!
-          </Description>
+          <Title>{word}</Title>
+          <Description>{description}</Description>
         </Div>
       </TechnologyContent>
     </StyledTechnology>
