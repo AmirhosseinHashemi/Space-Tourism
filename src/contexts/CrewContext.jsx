@@ -1,7 +1,7 @@
-import {createContext, useContext, useState} from "react";
+import {createContext, useState} from "react";
 import {CREW, DEFAULT_DISPLAYED_CREW} from "../utils/config";
 
-const CrewContext = createContext();
+export const CrewContext = createContext();
 
 function CrewProvider({children}) {
   const [displayedCrew, setDisplayedCrew] = useState(DEFAULT_DISPLAYED_CREW);
@@ -18,10 +18,4 @@ function CrewProvider({children}) {
   );
 }
 
-// hook
-function useCrew() {
-  const context = useContext(CrewContext);
-  return context;
-}
-
-export {CrewProvider, useCrew};
+export default CrewProvider;
