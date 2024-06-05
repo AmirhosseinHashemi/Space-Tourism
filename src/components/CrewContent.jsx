@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import {useCrew} from "../contexts/CrewContext";
+import useCrew from "../hooks/useCrew";
+
 import {CREW_LENGTH} from "../utils/config";
 
 import CircleDots from "./CircleDots";
