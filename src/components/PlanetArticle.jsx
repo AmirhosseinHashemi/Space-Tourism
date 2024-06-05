@@ -1,5 +1,7 @@
 import {Link, useSearchParams} from "react-router-dom";
 import styled from "styled-components";
+import {DEFAULT_DISPLAYED_PLANET, PLANETS} from "../utils/config";
+
 import Line from "./Line";
 
 const PlanetImage = styled.img`
@@ -88,86 +90,44 @@ const Duration = styled(Distance)`
 
 function PlanetArticle() {
   const [searchParams] = useSearchParams();
-  const planet = searchParams.get("planet") || "moon";
+  const displayedPlanet =
+    searchParams.get("planet") || DEFAULT_DISPLAYED_PLANET;
+
+  const {description, distance, duration, image} = PLANETS.find(
+    (planet) => planet.name === displayedPlanet
+  );
 
   return (
     <>
-      <PlanetImage src={`images/destination/image-${planet}.webp`} />
+      <PlanetImage src={image} />
       <StyledPlanetArticle>
         <nav>
           <Ul>
-            <Item>
-              <StyledLink
-                to="?planet=moon"
-                className={`${planet === "moon" ? "active" : ""}`}
-              >
-                moon
-              </StyledLink>
-            </Item>
-            <Item>
-              <StyledLink
-                to="?planet=mars"
-                className={`${planet === "mars" ? "active" : ""}`}
-              >
-                mars
-              </StyledLink>
-            </Item>
-            <Item>
-              <StyledLink
-                to="?planet=europa"
-                className={`${planet === "europa" ? "active" : ""}`}
-              >
-                europa
-              </StyledLink>
-            </Item>
-            <Item>
-              <StyledLink
-                to="?planet=titan"
-                className={`${planet === "titan" ? "active" : ""}`}
-              >
-                titan
-              </StyledLink>
-            </Item>
+            {PLANETS.map((planet) => (
+              <Item key={planet.id}>
+                <StyledLink
+                  to={`?planet=${planet.name}`}
+                  className={`${
+                    displayedPlanet === planet.name ? "active" : ""
+                  }`}
+                >
+                  {planet.name}
+                </StyledLink>
+              </Item>
+            ))}
           </Ul>
         </nav>
-        <Title>{planet}</Title>
-        <Description>
-          {planet === "moon" &&
-            `See our planet as you’ve never seen it before. A perfect relaxing
-          trip away to help regain perspective and come back refreshed. While
-          you’re there, take in some history by visiting the Luna 2 and Apollo
-          11 landing sites.`}
-
-          {planet === "mars" &&
-            `Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!`}
-
-          {planet === "europa" &&
-            `The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.`}
-
-          {planet === "titan" &&
-            `The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.`}
-        </Description>
-
+        <Title>{displayedPlanet}</Title>
+        <Description>{description}</Description>
         <Line />
-
         <Distance>
           AVG. DISATANCE
-          <span>
-            {planet === "moon" && "384,400 km"}
-            {planet === "mars" && "225 mil. km"}
-            {planet === "europa" && "625 mil. km"}
-            {planet === "titan" && "1.6 bill. km"}
-          </span>
+          <span>{distance}</span>
         </Distance>
 
         <Duration>
           EST. TRAVEL TIME
-          <span>
-            {planet === "moon" && "3 days"}
-            {planet === "mars" && "9 months"}
-            {planet === "europa" && "3 years"}
-            {planet === "titan" && "7 Years"}
-          </span>
+          <span>{duration}</span>
         </Duration>
       </StyledPlanetArticle>
     </>
