@@ -10,13 +10,20 @@ const StyledCrewContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+  margin-top: 3.2rem;
+
+  @media only screen and (min-width: 768px) {
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 4rem;
+    margin-top: 6rem;
+  }
 `;
 
 const CrewImage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 3.2rem;
 
   & img {
     width: 17.712rem;
@@ -26,10 +33,32 @@ const CrewImage = styled.div`
   & div {
     margin: 0;
   }
+
+  @media only screen and (min-width: 768px) {
+    & img {
+      width: 45.637rem;
+      height: 57.2rem;
+    }
+
+    & div {
+      display: none;
+    }
+  }
 `;
 
 const CrewArticle = styled.article`
   text-align: center;
+
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    max-width: 59.2rem;
+
+    & div:first-of-type {
+      order: 1;
+      margin-top: 4rem;
+    }
+  }
 `;
 
 const JobTitle = styled.h3`
@@ -39,6 +68,11 @@ const JobTitle = styled.h3`
   text-transform: uppercase;
 
   margin-block: 3.2rem 0.8rem;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 2.4rem;
+    margin-top: 0;
+  }
 `;
 
 const FullName = styled.h3`
@@ -48,6 +82,10 @@ const FullName = styled.h3`
   text-transform: uppercase;
 
   margin-bottom: 1.6rem;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 4rem;
+  }
 `;
 
 const Description = styled.p`
@@ -55,6 +93,11 @@ const Description = styled.p`
   line-height: 2.5rem;
   letter-spacing: 0;
   color: var(--clr-primary-2);
+
+  @media only screen and (min-width: 768px) {
+    font-size: var(--fs-sm);
+    line-height: 2.8rem;
+  }
 `;
 
 function CrewContent() {
