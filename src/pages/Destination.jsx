@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import PageBackImgContainer from "../components/PageBackImgContainer";
 import TravelStep from "../components/TravelStep";
 import PlanetArticle from "../components/PlanetArticle";
 
@@ -18,6 +19,22 @@ const Div = styled.div`
 function Destination() {
   return (
     <StyledSection>
+      <PageBackImgContainer>
+        <picture>
+          <source
+            media="(max-width: 425px )"
+            srcSet="images/destination/background-destination-mobile.jpg"
+          />
+          <source
+            media="(max-width: 768px )"
+            srcSet="images/destination/background-destination-tablet.jpg"
+          />
+          <img
+            src={`images/destination/background-destination-desktop.jpg`}
+            alt=""
+          />
+        </picture>
+      </PageBackImgContainer>
       <TravelStep>
         <span>01</span> PICK YOUR DESTINATION
       </TravelStep>

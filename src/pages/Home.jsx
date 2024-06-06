@@ -1,6 +1,8 @@
 import styled from "styled-components";
+
 import ExploreButton from "../components/ExploreButton";
 import HomeContent from "../components/HomeContent";
+import PageBackImgContainer from "../components/PageBackImgContainer";
 
 const StyledHome = styled.div`
   display: flex;
@@ -14,6 +16,19 @@ const StyledHome = styled.div`
 function Home() {
   return (
     <StyledHome>
+      <PageBackImgContainer>
+        <picture>
+          <source
+            media="(max-width: 425px )"
+            srcSet="images/home/background-home-mobile.jpg"
+          />
+          <source
+            media="(max-width: 768px )"
+            srcSet="images/home/background-home-tablet.jpg"
+          />
+          <img src={`images/home/background-home-desktop.jpg`} alt="" />
+        </picture>
+      </PageBackImgContainer>
       <HomeContent />
       <ExploreButton />
     </StyledHome>
