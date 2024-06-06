@@ -12,12 +12,14 @@ const TravelStep = styled.h2`
   & span {
     font-weight: 700;
     color: rgba(255, 255, 255, 25%);
-    margin-right: 1.8rem;
+    margin-right: 1.6rem;
   }
 
   @media only screen and (min-width: 768px) {
+    font-size: 2rem;
     text-align: left;
     margin-top: 4rem;
+    letter-spacing: 0.338rem;
   }
 `;
 
