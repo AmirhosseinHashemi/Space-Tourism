@@ -14,6 +14,15 @@ const StyledNavMenu = styled.nav`
   z-index: 10;
 
   display: none;
+
+  @media only screen and (min-width: 768px) {
+    position: absolute;
+    display: block;
+    min-height: auto;
+    width: auto;
+    padding-block: 3.9rem;
+    padding-inline: 4.8rem 4.6rem;
+  }
 `;
 
 const Ul = styled.ul`
@@ -22,6 +31,11 @@ const Ul = styled.ul`
   gap: 3.2rem;
 
   color: var(--clr-white);
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 3.7rem;
+  }
 `;
 
 const Item = styled.li`
@@ -50,6 +64,25 @@ const StyledNavLink = styled(NavLink)`
     width: 0.4rem;
     height: 3.1rem;
     background-color: var(--clr-white);
+  }
+
+  @media only screen and (min-width: 768px) {
+    font-size: var(--fs-xs);
+    letter-spacing: 0.236rem;
+
+    & span {
+      display: none;
+    }
+
+    &.active::after {
+      top: auto;
+      bottom: -3.9rem;
+      right: 0;
+      left: 0;
+
+      width: auto;
+      height: 0.3rem;
+    }
   }
 `;
 

@@ -11,6 +11,10 @@ const StyledHamburgerMenu = styled.button`
     top: 3.395rem;
     right: 2.645rem;
   }
+
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
 `;
 
 function HamburgerMenu({isNavOpen, toggleNav}) {
