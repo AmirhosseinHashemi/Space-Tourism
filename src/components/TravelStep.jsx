@@ -14,6 +14,11 @@ const TravelStep = styled.h2`
     color: rgba(255, 255, 255, 25%);
     margin-right: 1.8rem;
   }
+
+  @media only screen and (min-width: 768px) {
+    text-align: left;
+    margin-top: 4rem;
+  }
 `;
 
 export default TravelStep;

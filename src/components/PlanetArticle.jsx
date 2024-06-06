@@ -7,6 +7,11 @@ import Line from "./Line";
 const PlanetImage = styled.img`
   width: 17rem;
   height: 17rem;
+
+  @media only screen and (min-width: 768px) {
+    width: 30rem;
+    height: 30rem;
+  }
 `;
 
 const StyledPlanetArticle = styled.article`
@@ -18,11 +23,23 @@ const StyledPlanetArticle = styled.article`
   font-weight: 400;
   color: var(--clr-primary-2);
   text-align: center;
+
+  @media only screen and (min-width: 768px) {
+    max-width: 57.3rem;
+
+    & div:first-of-type {
+      margin-block: 4.9rem 2.8rem;
+    }
+  }
 `;
 
 const Ul = styled.ul`
   display: flex;
   gap: 2.6rem;
+
+  @media only screen and (min-width: 768px) {
+    gap: 3.6rem;
+  }
 `;
 
 const Item = styled.li`
@@ -48,6 +65,15 @@ const StyledLink = styled(Link)`
     height: 0.3rem;
     background-color: var(--clr-white);
   }
+
+  @media only screen and (min-width: 768px) {
+    font-size: var(--fs-sm);
+    letter-spacing: 0.27rem;
+
+    &.active::after {
+      bottom: -1.2rem;
+    }
+  }
 `;
 
 const Title = styled.h3`
@@ -57,11 +83,34 @@ const Title = styled.h3`
   text-transform: uppercase;
 
   margin-block: 2rem 0.1rem;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 8rem;
+    margin-block: 3.2rem 0.8rem;
+  }
+`;
+
+const Div = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  @media only screen and (min-width: 768px) {
+    width: 100%;
+    justify-content: space-evenly;
+    flex-direction: row;
+    gap: 0;
+  }
 `;
 
 const Description = styled.p`
   font-size: 1.5rem;
   line-height: 2.5rem;
+
+  @media only screen and (min-width: 768px) {
+    font-size: var(--fs-sm);
+    line-height: 2.8rem;
+  }
 `;
 
 const Distance = styled.p`
@@ -74,8 +123,6 @@ const Distance = styled.p`
   letter-spacing: 0.236rem;
   text-transform: uppercase;
 
-  margin-bottom: 3.2rem;
-
   & span {
     font-family: var(--ff-bellefair);
     font-size: var(--fs-md);
@@ -84,9 +131,7 @@ const Distance = styled.p`
   }
 `;
 
-const Duration = styled(Distance)`
-  margin-bottom: 0;
-`;
+const Duration = styled(Distance)``;
 
 function PlanetArticle() {
   const [searchParams] = useSearchParams();
@@ -120,15 +165,17 @@ function PlanetArticle() {
         <Title>{displayedPlanet}</Title>
         <Description>{description}</Description>
         <Line />
-        <Distance>
-          AVG. DISATANCE
-          <span>{distance}</span>
-        </Distance>
+        <Div>
+          <Distance>
+            AVG. DISATANCE
+            <span>{distance}</span>
+          </Distance>
 
-        <Duration>
-          EST. TRAVEL TIME
-          <span>{duration}</span>
-        </Duration>
+          <Duration>
+            EST. TRAVEL TIME
+            <span>{duration}</span>
+          </Duration>
+        </Div>
       </StyledPlanetArticle>
     </>
   );

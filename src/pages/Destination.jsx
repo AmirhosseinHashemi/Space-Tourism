@@ -14,6 +14,10 @@ const Div = styled.div`
   align-items: center;
   gap: 2.6rem;
   margin-top: 3.2rem;
+
+  @media only screen and (min-width: 768px) {
+    margin-top: 6rem;
+  }
 `;
 
 function Destination() {
