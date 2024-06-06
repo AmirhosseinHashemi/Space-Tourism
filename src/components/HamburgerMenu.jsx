@@ -4,6 +4,13 @@ const StyledHamburgerMenu = styled.button`
   width: 2.4rem;
   height: 2.1rem;
   z-index: 11;
+  transition: all 0.5s;
+
+  &.setPos {
+    position: absolute;
+    top: 3.395rem;
+    right: 2.645rem;
+  }
 `;
 
 function HamburgerMenu({isNavOpen, toggleNav}) {
@@ -11,6 +18,7 @@ function HamburgerMenu({isNavOpen, toggleNav}) {
     <StyledHamburgerMenu
       aria-label={`${isNavOpen ? "hamburger" : "close"}`}
       onClick={toggleNav}
+      className={`${isNavOpen ? "setPos" : ""}`}
     >
       {isNavOpen ? (
         // hamburger icon
