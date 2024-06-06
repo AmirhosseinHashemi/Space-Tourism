@@ -25,6 +25,26 @@ const StyledHomeContent = styled.article`
     font-size: 1.5rem;
     line-height: 2.5rem;
   }
+
+  @media only screen and (min-width: 768px) {
+    max-width: 45rem;
+    gap: 2.4rem;
+
+    p:first-child {
+      font-size: 2rem;
+      letter-spacing: 0.338rem;
+    }
+
+    h2 {
+      font-size: var(--fs-3xl);
+      line-height: 15rem;
+    }
+
+    p:last-child {
+      font-size: var(--fs-sm);
+      line-height: 2.8rem;
+    }
+  }
 `;
 
 function HomeContent() {

@@ -11,6 +11,11 @@ const StyledHome = styled.div`
   gap: 8.1rem;
 
   padding-block: 2.4rem 4.8rem;
+
+  @media only screen and (min-width: 768px) {
+    padding-block: 10.6rem 9rem;
+    gap: 15.6rem;
+  }
 `;
 
 function Home() {

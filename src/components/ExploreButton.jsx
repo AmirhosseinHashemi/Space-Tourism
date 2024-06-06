@@ -12,6 +12,14 @@ const StyledExploreButton = styled.button`
   height: 15rem;
   background-color: var(--clr-white);
   border-radius: 50%;
+
+  @media only screen and (min-width: 768px) {
+    width: 24.2rem;
+    height: 24.2rem;
+
+    font-size: var(--fs-lg);
+    letter-spacing: 0.2rem;
+  }
 `;
 
 function ExploreButton() {
