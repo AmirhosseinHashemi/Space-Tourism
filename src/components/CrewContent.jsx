@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import useCrew from "../hooks/useCrew";
 
 import {CREW_LENGTH} from "../utils/config";
@@ -25,24 +25,49 @@ const CrewImage = styled.div`
   flex-direction: column;
   align-items: center;
 
-  & img {
-    width: 17.712rem;
-    height: 22.2rem;
-  }
-
   & div {
     margin: 0;
   }
 
   @media only screen and (min-width: 768px) {
-    & img {
-      width: 45.637rem;
-      height: 57.2rem;
-    }
-
     & div {
       display: none;
     }
+  }
+`;
+
+const Img = styled.img`
+  width: 17.712rem;
+  height: 22.2rem;
+
+  @media only screen and (min-width: 768px) {
+    ${(props) =>
+      props.id === 0 &&
+      css`
+        width: 45.637rem;
+        height: 57.2rem;
+      `}
+
+    ${(props) =>
+      props.id === 1 &&
+      css`
+        width: 36.885rem;
+        height: 53.2rem;
+      `}
+
+      ${(props) =>
+      props.id === 2 &&
+      css`
+        width: 43.309rem;
+        height: 53.2rem;
+      `}
+
+      ${(props) =>
+      props.id === 3 &&
+      css`
+        width: 53.951rem;
+        height: 53.2rem;
+      `}
   }
 `;
 
@@ -52,7 +77,30 @@ const CrewArticle = styled.article`
   @media only screen and (min-width: 768px) {
     display: flex;
     flex-direction: column;
-    max-width: 59.2rem;
+
+    ${(props) =>
+      props["data-article-num"] === 0 &&
+      css`
+        max-width: 45.8rem;
+      `}
+
+    ${(props) =>
+      props["data-article-num"] === 1 &&
+      css`
+        max-width: 52rem;
+      `}
+
+    ${(props) =>
+      props["data-article-num"] === 2 &&
+      css`
+        max-width: 59.2rem;
+      `}
+
+    ${(props) =>
+      props["data-article-num"] === 3 &&
+      css`
+        max-width: 53.6rem;
+      `}
 
     & div:first-of-type {
       order: 1;
@@ -109,11 +157,11 @@ function CrewContent() {
   return (
     <StyledCrewContent>
       <CrewImage>
-        <img src={image} alt={alt} />
+        <Img src={image} alt={alt} id={id} />
         <Line />
       </CrewImage>
 
-      <CrewArticle>
+      <CrewArticle data-article-num={id}>
         <CircleDots
           length={CREW_LENGTH}
           render={(_, index) => (
