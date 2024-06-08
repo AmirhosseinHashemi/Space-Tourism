@@ -6,6 +6,10 @@ import PlanetArticle from "../components/PlanetArticle";
 
 const StyledSection = styled.section`
   padding-bottom: 5.8rem;
+
+  @media only screen and (min-width: 768px) {
+    padding-bottom: 6.2rem;
+  }
 `;
 
 const Div = styled.div`
