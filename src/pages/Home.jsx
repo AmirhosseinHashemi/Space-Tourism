@@ -16,6 +16,13 @@ const StyledHome = styled.div`
     padding-block: 10.6rem 9rem;
     gap: 15.6rem;
   }
+
+  @media only screen and (min-width: 1024px) {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-block: 25.1rem 13.1rem;
+  }
 `;
 
 function Home() {

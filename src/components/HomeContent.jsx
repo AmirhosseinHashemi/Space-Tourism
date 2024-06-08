@@ -45,6 +45,26 @@ const StyledHomeContent = styled.article`
       line-height: 2.8rem;
     }
   }
+
+  @media only screen and (min-width: 1024px) {
+    align-items: flex-start;
+    text-align: left;
+
+    p:first-child {
+      font-size: var(--fs-md);
+      letter-spacing: 0.472rem;
+    }
+
+    h2 {
+      font-size: var(--fs-3xl);
+      line-height: normal;
+    }
+
+    p:last-child {
+      font-size: 1.8rem;
+      line-height: 3.2rem;
+    }
+  }
 `;
 
 function HomeContent() {

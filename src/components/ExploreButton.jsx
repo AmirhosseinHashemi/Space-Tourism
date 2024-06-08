@@ -20,6 +20,11 @@ const StyledExploreButton = styled.button`
     font-size: var(--fs-lg);
     letter-spacing: 0.2rem;
   }
+
+  @media only screen and (min-width: 1024px) {
+    width: 27.4rem;
+    height: 27.4rem;
+  }
 `;
 
 function ExploreButton() {
