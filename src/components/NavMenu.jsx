@@ -23,6 +23,12 @@ const StyledNavMenu = styled.nav`
     padding-block: 3.9rem;
     padding-inline: 4.8rem 4.6rem;
   }
+
+  @media only screen and (min-width: 1024px) {
+    position: relative;
+    padding-inline: 12.3rem 16.5rem;
+    margin-right: -5.5rem;
+  }
 `;
 
 const Ul = styled.ul`
@@ -35,6 +41,10 @@ const Ul = styled.ul`
   @media only screen and (min-width: 768px) {
     flex-direction: row;
     gap: 3.7rem;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    gap: 4.8rem;
   }
 `;
 
@@ -82,6 +92,15 @@ const StyledNavLink = styled(NavLink)`
 
       width: auto;
       height: 0.3rem;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    font-size: var(--fs-sm);
+    letter-spacing: var(--letter-spacing-md);
+
+    & span {
+      display: inline;
     }
   }
 `;
