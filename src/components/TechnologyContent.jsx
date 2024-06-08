@@ -5,14 +5,13 @@ import {TERMINOLOGIES} from "../utils/config";
 const StyledTechnologyContent = styled.article`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 const TechStep = styled.div`
   display: flex;
   justify-content: center;
   gap: 1.6rem;
-
-  font-size: 1.6rem;
 
   & button {
     width: 4rem;
@@ -21,6 +20,7 @@ const TechStep = styled.div`
     border-radius: 50%;
 
     font-family: var(--ff-bellefair);
+    font-size: 1.6rem;
     color: var(--clr-white);
   }
 
@@ -28,6 +28,14 @@ const TechStep = styled.div`
     border-color: var(--clr-white);
     background-color: var(--clr-white);
     color: var(--clr-primary-1);
+  }
+
+  @media only screen and (min-width: 768px) {
+    & button {
+      width: 5.8rem;
+      height: 5.8rem;
+      font-size: 2.4rem;
+    }
   }
 `;
 
@@ -41,10 +49,24 @@ const TechImage = styled.div`
     object-position: center;
     height: 17rem;
   }
+
+  @media only screen and (min-width: 768px) {
+    align-self: stretch;
+    margin-inline: -3.9rem;
+    margin-block: 6rem 5.6rem;
+
+    & img {
+      height: 31rem;
+    }
+  }
 `;
 
 const Div = styled.div`
   text-align: center;
+
+  @media only screen and (min-width: 768px) {
+    max-width: 45.8rem;
+  }
 `;
 
 const Terminology = styled.h3`
@@ -55,6 +77,12 @@ const Terminology = styled.h3`
   color: var(--clr-primary-2);
 
   margin-block: 2.6rem 0.9rem;
+
+  @media only screen and (min-width: 768px) {
+    font-size: var(--fs-sm);
+    letter-spacing: var(--letter-spacing-md);
+    margin-block: 4.4rem 1.6rem;
+  }
 `;
 
 const Title = styled.h3`
@@ -63,12 +91,21 @@ const Title = styled.h3`
   text-transform: uppercase;
 
   margin-bottom: 1.6rem;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 4rem;
+  }
 `;
 
 const Description = styled.p`
   font-size: 1.5rem;
   line-height: 2.5rem;
   color: var(--clr-primary-2);
+
+  @media only screen and (min-width: 768px) {
+    font-size: var(--fs-sm);
+    line-height: 2.8rem;
+  }
 `;
 
 function TechnologyContent() {

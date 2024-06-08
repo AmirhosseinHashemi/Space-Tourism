@@ -6,6 +6,10 @@ import PageBackImgContainer from "../components/PageBackImgContainer";
 
 const StyledTechnology = styled.section`
   padding-bottom: 5.4rem;
+
+  @media only screen and (min-width: 768px) {
+    padding-bottom: 9.7rem;
+  }
 `;
 
 function Technology() {
