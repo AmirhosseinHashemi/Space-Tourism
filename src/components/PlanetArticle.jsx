@@ -12,6 +12,11 @@ const PlanetImage = styled.img`
     width: 30rem;
     height: 30rem;
   }
+
+  @media only screen and (min-width: 768px) {
+    width: 44.5rem;
+    height: 44.5rem;
+  }
 `;
 
 const StyledPlanetArticle = styled.article`
@@ -29,6 +34,16 @@ const StyledPlanetArticle = styled.article`
 
     & div:first-of-type {
       margin-block: 4.9rem 2.8rem;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    align-items: flex-start;
+    text-align: left;
+    max-width: 44.5rem;
+
+    & div:first-of-type {
+      margin-top: 5.4rem;
     }
   }
 `;
@@ -88,6 +103,11 @@ const Title = styled.h3`
     font-size: 8rem;
     margin-block: 3.2rem 0.8rem;
   }
+
+  @media only screen and (min-width: 768px) {
+    font-size: var(--fs-2xl);
+    margin-block: 5.2rem 1.4rem;
+  }
 `;
 
 const Div = styled.div`
@@ -101,6 +121,11 @@ const Div = styled.div`
     flex-direction: row;
     gap: 0;
   }
+
+  @media only screen and (min-width: 1024px) {
+    justify-content: flex-start;
+    gap: 7.9rem;
+  }
 `;
 
 const Description = styled.p`
@@ -110,6 +135,11 @@ const Description = styled.p`
   @media only screen and (min-width: 768px) {
     font-size: var(--fs-sm);
     line-height: 2.8rem;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    font-size: 1.8rem;
+    line-height: 3.2rem;
   }
 `;
 
@@ -128,6 +158,10 @@ const Distance = styled.p`
     font-size: var(--fs-md);
     letter-spacing: 0;
     color: var(--clr-white);
+  }
+
+  @media only screen and (min-width: 768px) {
+    align-items: flex-start;
   }
 `;
 

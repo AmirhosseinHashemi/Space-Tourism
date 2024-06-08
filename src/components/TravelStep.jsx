@@ -21,6 +21,12 @@ const TravelStep = styled.h2`
     margin-top: 4rem;
     letter-spacing: 0.338rem;
   }
+
+  @media only screen and (min-width: 1024px) {
+    font-size: var(--fs-md);
+    margin-top: 7%.6;
+    letter-spacing: 0.472rem;
+  }
 `;
 
 export default TravelStep;
