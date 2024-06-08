@@ -10,6 +10,11 @@ const Container = styled.div`
     max-width: 76.8rem;
     padding-inline: 3.9rem;
   }
+
+  @media only screen and (min-width: 1024px) {
+    max-width: 144rem;
+    padding-inline: 5.5rem;
+  }
 `;
 
 export default Container;
