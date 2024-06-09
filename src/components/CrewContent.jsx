@@ -18,6 +18,20 @@ const StyledCrewContent = styled.div`
     gap: 4rem;
     margin-top: 6rem;
   }
+
+  @media only screen and (min-width: 1024px) {
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 0;
+
+    margin-top: 15.4rem;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    padding: 0 11.4rem;
+  }
 `;
 
 const CrewImage = styled.div`
@@ -34,11 +48,18 @@ const CrewImage = styled.div`
       display: none;
     }
   }
+
+  @media only screen and (min-width: 1024px) {
+    position: absolute;
+    right: 0;
+    bottom: -9.4rem;
+  }
 `;
 
 const Img = styled.img`
   width: 17.712rem;
   height: 22.2rem;
+  z-index: -1;
 
   @media only screen and (min-width: 768px) {
     ${(props) =>
@@ -67,6 +88,36 @@ const Img = styled.img`
       css`
         width: 53.951rem;
         height: 53.2rem;
+      `}
+  }
+
+  @media only screen and (min-width: 1440px) {
+    ${(props) =>
+      props.id === 0 &&
+      css`
+        width: 56.807rem;
+        height: 71.2rem;
+      `}
+
+    ${(props) =>
+      props.id === 1 &&
+      css`
+        width: 45.344rem;
+        height: 65.4rem;
+      `}
+
+      ${(props) =>
+      props.id === 2 &&
+      css`
+        width: 55.439rem;
+        height: 68.1rem;
+      `}
+
+      ${(props) =>
+      props.id === 3 &&
+      css`
+        width: 61.557rem;
+        height: 60.7rem;
       `}
   }
 `;
@@ -107,6 +158,27 @@ const CrewArticle = styled.article`
       margin-top: 4rem;
     }
   }
+
+  @media only screen and (min-width: 1024px) {
+    align-items: flex-start;
+    text-align: left;
+    max-width: none;
+
+    & div:first-of-type {
+      ${(props) =>
+        props["data-article-num"] === 2
+          ? css`
+              margin-top: 8.8rem;
+            `
+          : css`
+              margin-top: 12rem;
+            `}
+    }
+  }
+
+  /* @media only screen and (min-width: 1200px) {
+    max-width: none;
+  } */
 `;
 
 const JobTitle = styled.h3`
@@ -121,6 +193,11 @@ const JobTitle = styled.h3`
     font-size: 2.4rem;
     margin-top: 0;
   }
+
+  @media only screen and (min-width: 1024px) {
+    font-size: var(--fs-lg);
+    margin-bottom: 1.5rem;
+  }
 `;
 
 const FullName = styled.h3`
@@ -134,6 +211,11 @@ const FullName = styled.h3`
   @media only screen and (min-width: 768px) {
     font-size: 4rem;
   }
+
+  @media only screen and (min-width: 1024px) {
+    font-size: var(--fs-xl);
+    margin-bottom: 2.7rem;
+  }
 `;
 
 const Description = styled.p`
@@ -145,6 +227,12 @@ const Description = styled.p`
   @media only screen and (min-width: 768px) {
     font-size: var(--fs-sm);
     line-height: 2.8rem;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    max-width: 44.4rem;
   }
 `;
 

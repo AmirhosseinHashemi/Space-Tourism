@@ -16,6 +16,13 @@ const StyledCircleDots = styled.div`
   & .dot.active {
     background-color: var(--clr-white);
   }
+
+  @media only screen and (min-width: 1024px) {
+    & .dot {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
 `;
 
 function CircleDots({length, render}) {
