@@ -16,12 +16,13 @@ const StyledHeader = styled.header`
 `;
 
 const Div = styled.div`
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   @media only screen and (min-width: 1440px) {
+    position: relative;
+
     &::after {
       position: absolute;
       content: "";
