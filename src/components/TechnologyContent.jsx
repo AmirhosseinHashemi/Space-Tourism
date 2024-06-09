@@ -110,14 +110,14 @@ const Description = styled.p`
 
 function TechnologyContent() {
   const {
-    displayedTerm: {word, description, id, image},
+    displayedTerm: {word, description, id, image_land, image_port},
     changeTerm,
   } = useTerm();
 
   return (
     <StyledTechnologyContent>
       <TechImage>
-        <img src={image} alt="" />
+        <img src={image_land} alt="" />
       </TechImage>
       <TechStep>
         {TERMINOLOGIES.map((term) => (
