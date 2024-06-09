@@ -6,6 +6,17 @@ const StyledTechnologyContent = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media only screen and (min-width: 1024px) {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-top: 13.7rem;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    padding: 0 11.4rem;
+  }
 `;
 
 const TechStep = styled.div`
@@ -37,6 +48,19 @@ const TechStep = styled.div`
       font-size: 2.4rem;
     }
   }
+
+  @media only screen and (min-width: 1024px) {
+    order: 1;
+
+    flex-direction: column;
+    gap: 3.2rem;
+
+    & button {
+      width: 8rem;
+      height: 8rem;
+      font-size: var(--fs-lg);
+    }
+  }
 `;
 
 const TechImage = styled.div`
@@ -59,6 +83,19 @@ const TechImage = styled.div`
       height: 31rem;
     }
   }
+
+  @media only screen and (min-width: 1024px) {
+    position: absolute;
+    top: 6rem;
+    right: 0;
+    width: 51.5rem;
+
+    margin: 0 -5.5rem 0 0;
+
+    & img {
+      height: 52.7rem;
+    }
+  }
 `;
 
 const Div = styled.div`
@@ -66,6 +103,12 @@ const Div = styled.div`
 
   @media only screen and (min-width: 768px) {
     max-width: 45.8rem;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    text-align: left;
+    margin-left: 8rem;
+    max-width: none;
   }
 `;
 
@@ -83,6 +126,10 @@ const Terminology = styled.h3`
     letter-spacing: var(--letter-spacing-md);
     margin-block: 4.4rem 1.6rem;
   }
+
+  @media only screen and (min-width: 1024px) {
+    margin-top: 0;
+  }
 `;
 
 const Title = styled.h3`
@@ -95,6 +142,10 @@ const Title = styled.h3`
   @media only screen and (min-width: 768px) {
     font-size: 4rem;
   }
+
+  @media only screen and (min-width: 1024px) {
+    font-size: var(--fs-xl);
+  }
 `;
 
 const Description = styled.p`
@@ -105,6 +156,12 @@ const Description = styled.p`
   @media only screen and (min-width: 768px) {
     font-size: var(--fs-sm);
     line-height: 2.8rem;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    max-width: 44.4rem;
   }
 `;
 
@@ -117,7 +174,10 @@ function TechnologyContent() {
   return (
     <StyledTechnologyContent>
       <TechImage>
-        <img src={image_land} alt="" />
+        <picture>
+          <source media="(min-width: 1024px)" srcSet={image_port} />
+          <img src={image_land} alt="" />
+        </picture>
       </TechImage>
       <TechStep>
         {TERMINOLOGIES.map((term) => (

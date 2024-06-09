@@ -10,6 +10,11 @@ const StyledTechnology = styled.section`
   @media only screen and (min-width: 768px) {
     padding-bottom: 9.7rem;
   }
+
+  @media only screen and (min-width: 1024px) {
+    position: relative;
+    padding-bottom: 21.4rem;
+  }
 `;
 
 function Technology() {
