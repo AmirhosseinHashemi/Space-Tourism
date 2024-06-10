@@ -1,3 +1,4 @@
+import {useNavigate} from "react-router-dom";
 import styled from "styled-components";
 
 const StyledExploreButton = styled.button`
@@ -33,7 +34,13 @@ const StyledExploreButton = styled.button`
 `;
 
 function ExploreButton() {
-  return <StyledExploreButton>EXPLORE</StyledExploreButton>;
+  const navigate = useNavigate();
+
+  return (
+    <StyledExploreButton onClick={() => navigate("/destination")}>
+      EXPLORE
+    </StyledExploreButton>
+  );
 }
 
 export default ExploreButton;
