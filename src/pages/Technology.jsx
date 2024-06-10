@@ -11,7 +11,7 @@ const StyledTechnology = styled.section`
     padding-bottom: 9.7rem;
   }
 
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1200px) {
     position: relative;
     padding-bottom: 21.4rem;
   }

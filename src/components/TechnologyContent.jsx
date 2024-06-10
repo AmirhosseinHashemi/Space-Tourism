@@ -7,7 +7,7 @@ const StyledTechnologyContent = styled.article`
   flex-direction: column;
   align-items: center;
 
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1200px) {
     flex-direction: row-reverse;
     align-items: flex-start;
     justify-content: flex-end;
@@ -50,9 +50,6 @@ const TechStep = styled.div`
   }
 
   @media only screen and (min-width: 1024px) {
-    order: 1;
-
-    flex-direction: column;
     gap: 3.2rem;
 
     & button {
@@ -60,6 +57,12 @@ const TechStep = styled.div`
       height: 8rem;
       font-size: var(--fs-lg);
     }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    order: 1;
+
+    flex-direction: column;
   }
 `;
 
@@ -69,7 +72,7 @@ const TechImage = styled.div`
   margin-block: 3.2rem 3.4rem;
 
   & img {
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     height: 17rem;
   }
@@ -84,7 +87,7 @@ const TechImage = styled.div`
     }
   }
 
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1200px) {
     position: absolute;
     top: 6rem;
     right: 0;
@@ -106,9 +109,12 @@ const Div = styled.div`
   }
 
   @media only screen and (min-width: 1024px) {
+    max-width: none;
+  }
+
+  @media only screen and (min-width: 1200px) {
     text-align: left;
     margin-left: 8rem;
-    max-width: none;
   }
 `;
 
@@ -127,7 +133,7 @@ const Terminology = styled.h3`
     margin-block: 4.4rem 1.6rem;
   }
 
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1200px) {
     margin-top: 0;
   }
 `;
@@ -175,7 +181,7 @@ function TechnologyContent() {
     <StyledTechnologyContent>
       <TechImage>
         <picture>
-          <source media="(min-width: 1024px)" srcSet={image_port} />
+          <source media="(min-width: 1200px)" srcSet={image_port} />
           <img src={image_land} alt="" />
         </picture>
       </TechImage>
