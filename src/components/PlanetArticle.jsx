@@ -70,15 +70,20 @@ const StyledLink = styled(Link)`
     color: var(--clr-white);
   }
 
-  &.active::after {
+  &::after {
     position: absolute;
     content: "";
     left: 0;
     right: 0;
     bottom: -0.8rem;
 
-    height: 0.3rem;
+    height: 0;
+    /* height: 0.3rem; */
     background-color: var(--clr-white);
+  }
+
+  &.active::after {
+    height: 0.3rem;
   }
 
   @media only screen and (min-width: 768px) {
@@ -87,6 +92,14 @@ const StyledLink = styled(Link)`
 
     &.active::after {
       bottom: -1.2rem;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    &:hover&::after {
+      bottom: -1.2rem;
+      height: 0.3rem;
+      background-color: rgba(255, 255, 255, 50%);
     }
   }
 `;

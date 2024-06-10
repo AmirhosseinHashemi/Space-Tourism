@@ -56,6 +56,11 @@ const TechStep = styled.div`
       width: 8rem;
       height: 8rem;
       font-size: var(--fs-lg);
+      transition: all 0.3s;
+    }
+
+    & button:hover {
+      border: 0.1rem solid var(--clr-white);
     }
   }
 

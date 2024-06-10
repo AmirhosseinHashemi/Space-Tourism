@@ -22,8 +22,13 @@ const StyledExploreButton = styled.button`
   }
 
   @media only screen and (min-width: 1024px) {
+    transition: all 0.3s;
     width: 27.4rem;
     height: 27.4rem;
+
+    &:hover {
+      box-shadow: 0 0 0 8.8rem rgba(255, 255, 255, 10.36%);
+    }
   }
 `;
 

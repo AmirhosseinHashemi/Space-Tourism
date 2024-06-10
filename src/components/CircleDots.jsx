@@ -21,6 +21,11 @@ const StyledCircleDots = styled.div`
     & .dot {
       width: 1.5rem;
       height: 1.5rem;
+      transition: all 0.15s;
+    }
+
+    & .dot:hover {
+      background-color: rgba(255, 255, 255, 50.01%);
     }
   }
 `;

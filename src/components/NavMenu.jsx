@@ -102,6 +102,23 @@ const StyledNavLink = styled(NavLink)`
     & span {
       display: inline;
     }
+
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: -3.9rem;
+      right: 100%;
+      left: 0;
+
+      transition: all 0.3s;
+
+      height: 0.3rem;
+      background-color: rgba(255, 255, 255, 50.21%);
+    }
+
+    &:hover&::after {
+      right: 0%;
+    }
   }
 `;
 
